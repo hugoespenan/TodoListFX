@@ -10,8 +10,9 @@ import java.sql.SQLException;
 
 public class ListeController {
     Bdd bdd = new Bdd();
-    public ObservableList<Liste> getAll() throws SQLException {
-        PreparedStatement requete = bdd.getConnexion().prepareStatement("SELECT * FROM liste");
+    public ObservableList<Liste> getAll(int id_uti) throws SQLException {
+        PreparedStatement requete = bdd.getConnexion().prepareStatement("SELECT * FROM liste LEFT JOIN participe ON participe.ref_liste = liste.id_liste WHERE participe.ref_user = ?");
+        requete.setInt(1, id_uti);
         ResultSet resultSet = requete.executeQuery();
         ObservableList<Liste> liste = FXCollections.observableArrayList();
         while (resultSet.next()){

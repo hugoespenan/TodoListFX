@@ -49,7 +49,7 @@ public class AcceuilUti {
         AfficherListes afficherListes = new AfficherListes(this.id_user);
         ListeController listecontroller = new ListeController();
         HelloApplication.changeScene("afficherlistes", afficherListes);
-        afficherListes.setItems(listecontroller.getAll());
+        afficherListes.setItems(listecontroller.getAll(this.id_user));
     }
 
 
