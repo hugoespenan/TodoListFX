@@ -12,5 +12,6 @@
       <TextField fx:id="description" layoutX="227.0" layoutY="128.0" />
       <CheckBox fx:id="est_realise" layoutX="264.0" layoutY="183.0" mnemonicParsing="false" text="est réalisé ?" />
       <Button layoutX="270.0" layoutY="226.0" mnemonicParsing="false" onAction="#modifier" text="modifier" />
+      <Button layoutX="6.0" layoutY="365.0" mnemonicParsing="false" onAction="#retour" prefHeight="34.0" prefWidth="70.0" text="retour" />
    </children>
 </AnchorPane>

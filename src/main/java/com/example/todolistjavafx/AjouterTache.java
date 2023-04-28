@@ -3,9 +3,11 @@ package com.example.todolistjavafx;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.SplitMenuButton;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import user.Bdd;
+import user.TacheController;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -16,8 +18,6 @@ public class AjouterTache {
 
     @FXML
     private Text erreur;
-
-
     @FXML
     private CheckBox est_realise;
 
@@ -48,7 +48,10 @@ public class AjouterTache {
             requete.setInt(4, this.ref_liste);
             requete.setInt(5, this.id_user);
             requete.executeUpdate();
-            HelloApplication.changeScene("affichertaches", new AfficherTaches(this.id_user, this.ref_liste));
+            AfficherTaches afficherTaches = new AfficherTaches(this.id_user, this.ref_liste);
+            TacheController tacheController = new TacheController();
+            HelloApplication.changeScene("affichertaches", afficherTaches);
+            afficherTaches.setItems(tacheController.getAll(this.ref_liste));
         }else {
             this.erreur.setText("Veuillez remplir tout les champs");
         }

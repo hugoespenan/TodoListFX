@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
 import user.Bdd;
+import user.TacheController;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -65,7 +66,9 @@ public class ModifierTache {
     }
     public void retour() throws SQLException {
         AfficherTaches afficherTaches = new AfficherTaches(this.id_user, this.id_liste);
+        TacheController tacheController = new TacheController();
         HelloApplication.changeScene("affichertaches", afficherTaches);
+        afficherTaches.setItems(tacheController.getAll(this.id_liste));
     }
 
 }

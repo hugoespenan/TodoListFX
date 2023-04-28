@@ -59,7 +59,9 @@ public class AfficherTaches {
 
     public void retour() throws SQLException {
         AfficherListes afficherListes = new AfficherListes(this.id_user);
+        ListeController listecontroller = new ListeController();
         HelloApplication.changeScene("afficherlistes", afficherListes);
+        afficherListes.setItems(listecontroller.getAll(this.id_user));
     }
     @FXML
     void ajouter(ActionEvent event) {
@@ -79,10 +81,10 @@ public class AfficherTaches {
             PreparedStatement requete3 = bdd.getConnexion().prepareStatement("DELETE FROM tache WHERE id_tache = ?");
             requete3.setInt(1, tacheSelectionnee.getIdentifiant());
             requete3.executeUpdate();
+            AfficherTaches afficherTaches = new AfficherTaches(this.id_user, this.id_liste);
             TacheController tacheController = new TacheController();
-            AfficherTaches afficherTache = new AfficherTaches(this.id_user, this.id_liste);
-            HelloApplication.changeScene("affichertaches", afficherTache);
-            afficherTache.setItems(tacheController.getAll(this.id_user));
+            HelloApplication.changeScene("affichertaches", afficherTaches);
+            afficherTaches.setItems(tacheController.getAll(this.id_liste));
         }
     }
     public void modifier() throws SQLException {

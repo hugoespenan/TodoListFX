@@ -16,7 +16,7 @@
       </TableView>
       <Button layoutX="14.0" mnemonicParsing="false" onAction="#affichertaches" prefHeight="30.0" prefWidth="145.0" text="Afficher les tâches" />
       <Button layoutX="239.0" layoutY="2.0" mnemonicParsing="false" onAction="#supprimer" prefHeight="26.0" prefWidth="117.0" text="supprimer" />
-      <Button layoutX="442.0" layoutY="2.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="117.0" text="modifier" />
+      <Button layoutX="442.0" layoutY="2.0" mnemonicParsing="false" onAction="#modifier" prefHeight="26.0" prefWidth="117.0" text="modifier" />
       <Button layoutY="373.0" mnemonicParsing="false" onAction="#retour" text="retour" />
    </children>
 </AnchorPane>

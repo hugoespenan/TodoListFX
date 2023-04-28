@@ -79,6 +79,12 @@ public class AfficherListes {
             HelloApplication.changeScene("acceuiluti", acceuilUti);
             acceuilUti.setNomPrenom();
     }
+    public void modifier() throws SQLException {
+        Liste listeSelectionnee = table.getSelectionModel().getSelectedItem();
+        ModifierListe modifierListe = new ModifierListe(this.id_user, listeSelectionnee.getIdentifiant());
+        HelloApplication.changeScene("modifierliste", modifierListe);
+        modifierListe.modifierAfficher();
+    }
 
 
 }
