@@ -20,6 +20,8 @@ import java.util.Optional;
 public class AfficherTaches {
     private int id_user;
     private int id_liste;
+
+    private int id_type;
     @FXML
     private TableColumn<Tache, String> description;
 
@@ -66,7 +68,7 @@ public class AfficherTaches {
     @FXML
     void ajouter(ActionEvent event) {
         Tache tacheSelectionnee = table.getSelectionModel().getSelectedItem();
-        HelloApplication.changeScene("ajoutertache", new AjouterTache(this.id_user, this.id_liste));
+        HelloApplication.changeScene("ajoutertache", new AjouterTache(this.id_user, this.id_liste,this.id_type));
     }
 
     public void supprimer() throws SQLException {
