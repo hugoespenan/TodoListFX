@@ -42,5 +42,10 @@
             <Font size="24.0" />
          </font>
       </Button>
+      <Button layoutX="169.0" layoutY="269.0" mnemonicParsing="false" onAction="#recherche" prefHeight="51.0" prefWidth="223.0" text="Rechercher une tâche">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

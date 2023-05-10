@@ -26,6 +26,12 @@ public class AcceuilUti {
     public AcceuilUti(){
     }
 
+    @FXML
+    public void recherche(ActionEvent event) {
+        RechercherTache rechercherTache = new RechercherTache(this.id_user);
+        HelloApplication.changeScene("recherchertache",rechercherTache);
+    }
+
 
     public void setNomPrenom() throws SQLException {
         int id = this.id_user;
